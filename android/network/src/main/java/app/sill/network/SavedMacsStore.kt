@@ -101,8 +101,31 @@ class SavedMacsStore(
     fun saveMacs(macs: List<SavedMac>) = save(macs)
     fun getMacs(): List<SavedMac> = load()
     fun setMacs(macs: List<SavedMac>) = save(macs)
+    fun getAll(): List<SavedMac> = load()
+    fun getAllMacs(): List<SavedMac> = load()
+    fun fetch(): List<SavedMac> = load()
+    fun fetchMacs(): List<SavedMac> = load()
+
+    fun saveMac(mac: SavedMac) {
+        val next = load().filterNot { it.macID == mac.macID } + mac
+        save(next)
+    }
+    fun add(mac: SavedMac) = saveMac(mac)
+    fun addMac(mac: SavedMac) = saveMac(mac)
+    fun put(mac: SavedMac) = saveMac(mac)
+    fun putMac(mac: SavedMac) = saveMac(mac)
+    fun update(mac: SavedMac) = saveMac(mac)
+    fun updateMac(mac: SavedMac) = saveMac(mac)
+
+    fun remove(macID: String) { save(load().filterNot { it.macID == macID }) }
+    fun removeMac(macID: String) = remove(macID)
+    fun delete(macID: String) = remove(macID)
+    fun deleteMac(macID: String) = remove(macID)
+    fun removeMac(mac: SavedMac) = remove(mac.macID)
 
     fun clear() { listStorage.write(null) }
+    fun clearMacs() = clear()
+    fun clearAll() = clear()
 
     // Key persistence (secrets in EncryptedSharedPreferences)
     fun saveKey(macID: String, key: String) { keyStorage.put(keyName(macID), key) }
