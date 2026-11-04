@@ -20,6 +20,12 @@ android {
             jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
         }
     }
+
+    sourceSets {
+        getByName("test") {
+            resources.srcDirs("../../Tests/fixtures/protocol")
+        }
+    }
 }
 
 dependencies {

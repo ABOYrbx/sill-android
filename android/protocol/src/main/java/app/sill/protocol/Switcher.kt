@@ -288,3 +288,60 @@ data class MacPointer(
         }
     }
 }
+data class LaunchApp(
+    var bundleID: String,
+) {
+    fun toJson(): String = """{"bundleID":${jsonString(bundleID)}}"""
+
+    companion object {
+        fun fromJson(json: String): LaunchApp? {
+            val s = json.trim()
+            if (!s.startsWith("{") || !s.endsWith("}")) return null
+            val bundleID = regexString(s, "bundleID")?.let { unescapeJson(it) } ?: return null
+            return LaunchApp(bundleID)
+        }
+
+        private fun regexString(s: String, key: String): String? {
+            val re = Regex("\"" + Regex.escape(key) + "\"\\s*:\\s*\"((?:\\\\.|[^\"\\\\])*)\"")
+            return re.find(s)?.groupValues?.get(1)
+        }
+    }
+}
+
+data class WindowCommand(
+    var id: UInt,
+    var action: Action,
+) {
+    enum class Action(val raw: String) {
+        Close("close"),
+        Minimize("minimize"),
+        FullScreen("fullScreen");
+
+        companion object {
+            fun fromRaw(raw: String): Action? = entries.firstOrNull { it.raw == raw }
+        }
+    }
+
+    fun toJson(): String = """{"action":${jsonString(action.raw)},"id":$id}"""
+
+    companion object {
+        fun fromJson(json: String): WindowCommand? {
+            val s = json.trim()
+            if (!s.startsWith("{") || !s.endsWith("}")) return null
+            val actionRaw = regexString(s, "action") ?: return null
+            val action = Action.fromRaw(actionRaw) ?: return null
+            val id = regexLong(s, "id")?.toUInt() ?: return null
+            return WindowCommand(id, action)
+        }
+
+        private fun regexString(s: String, key: String): String? {
+            val re = Regex("\"" + Regex.escape(key) + "\"\\s*:\\s*\"((?:\\\\.|[^\"\\\\])*)\"")
+            return re.find(s)?.groupValues?.get(1)
+        }
+
+        private fun regexLong(s: String, key: String): Long? {
+            val re = Regex("\"" + Regex.escape(key) + "\"\\s*:\\s*(-?\\d+)")
+            return re.find(s)?.groupValues?.get(1)?.toLongOrNull()
+        }
+    }
+}
