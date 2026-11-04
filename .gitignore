@@ -21,3 +21,8 @@ design/reel/
 
 # Python's bytecode caches (Tests/checks/module.py, which its checks' mutants.py import).
 __pycache__/
+
+# Android (android/)
+.gradle/
+build/
+*.iml
