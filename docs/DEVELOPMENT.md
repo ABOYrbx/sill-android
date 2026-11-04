@@ -135,7 +135,7 @@ the Mac's languages) and, after a first answer, GitHub's own ETag back
 (If-None-Match); nothing else about the Mac or you: no identifier, no cookie,
 nothing about your devices. "Check for updates automatically" turns the daily
 check off (what an earlier check found stays in the menu); the check reads only
-the latest published release of Saffsanity/sill (`UpdatePolicy.feed`),
+the latest published release of ABOYrbx/sill-android (`UpdatePolicy.feed`),
 whichever repository a build came from; should GitHub answer 404 there (no
 release, as before v0.3.0), it logs "Update check failed: GitHub has no
 release of Sill (HTTP 404)." once a day. It keeps `updateLastCheck`,
@@ -2265,7 +2265,7 @@ Distribution: a release is a commit tagged `v` + the version both apps carry,
 set together since 0.5.1 (Packaging/Info.plist's CFBundleShortVersionString
 and the iOS project's MARKETING_VERSION in both configurations; `v0.5.1` for
 0.5.1: bump both, commit, `git tag v0.5.1`, `git push origin v0.5.1`), and its
-GitHub release in Saffsanity/sill is published (not a draft, not a prerelease)
+GitHub release in ABOYrbx/sill-android is published (not a draft, not a prerelease)
 with the notarized disk image and zip attached; every Sill.app's update check
 reads that repository's releases alone and compares the tag with the version
 it runs.
@@ -2283,7 +2283,7 @@ inside), and prints both files' paths and SHA-256. With `--publish` it then
 makes the GitHub Release (Sill.dmg, Sill.zip and their `.sha256` files),
 and refuses to start unless origin has the tag and it names HEAD (gh would
 otherwise make the tag from the default branch); a `SILL_RELEASE_REPO` other
-than Saffsanity/sill gets a warning, since no Sill.app offers a release
+than ABOYrbx/sill-android gets a warning, since no Sill.app offers a release
 published there. It needs
 `SILL_SIGN_IDENTITY='Developer ID Application: … (9B2KKVM937)'` and
 `SILL_NOTARY_PROFILE` (a profile saved with `xcrun notarytool
@@ -2330,8 +2330,8 @@ both submissions are the run's artifact `notary-v<version>` for 30 days: when
 the job's log says a notary log lists issues, read them there.
 
 Homebrew: Sill for Mac is also the cask `sill` in Sill's own tap,
-[Saffsanity/homebrew-sill](https://github.com/Saffsanity/homebrew-sill), so
-`brew install --cask saffsanity/sill/sill` installs it (that command taps
+[ABOYrbx/homebrew-sill](https://github.com/ABOYrbx/homebrew-sill), so
+`brew install --cask ABOYrbx/sill/sill` installs it (that command taps
 the repository and trusts the one cask, which Homebrew 6 and later need for a
 tap that isn't Homebrew's own). The cask names the release's `Sill.dmg` by
 its version and SHA-256, so each release bumps it once it is published

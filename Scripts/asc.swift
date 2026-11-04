@@ -227,7 +227,7 @@ func readWhatsNew(_ path: String) -> String {
     if trimmed.isEmpty { usageError("--whats-new: \(path) is empty") }
     let limit = 4000
     if trimmed.utf16.count <= limit { return trimmed }
-    let tail = "\n… and more: https://github.com/Saffsanity/sill/releases/tag/nightly"
+    let tail = "\n… and more: https://github.com/ABOYrbx/sill-android/releases/tag/nightly"
     var kept: [Substring] = []
     var count = tail.utf16.count
     for line in trimmed.split(separator: "\n", omittingEmptySubsequences: false) {

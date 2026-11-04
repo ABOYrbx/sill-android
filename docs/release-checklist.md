@@ -102,7 +102,7 @@ shell.
 
 Preview it with `python3 -m http.server 8000 --directory site` and http://localhost:8000.
 
-Before it goes public (Saffsanity/sill went public on 2026-09-26, after the sweep of PR #24; the
+Before it goes public (ABOYrbx/sill-android went public on 2026-09-26, after the sweep of PR #24; the
 unchecked items below were done that day or record what was decided):
 
 - [x] Done 2026-09-25: `support@getsill.app` reaches Noah's mailbox (Cloudflare Email Routing,
@@ -124,7 +124,7 @@ unchecked items below were done that day or record what was decided):
 Hosting: GitHub Pages. On GitHub Free it serves only public repositories, and from a branch it
 serves the root or `/docs`, never `/site`. So:
 
-- [x] Done 2026-09-25: the public repository Saffsanity/sill-site holds a copy of `site/`, with
+- [x] Done 2026-09-25: the public repository ABOYrbx/sill-android-site holds a copy of `site/`, with
       Pages on (main, / root) and the custom domain set. Republish when `site/` changes, right
       after the release whose builds the change describes (part 2, the last item):
 - Words on main for a release not out yet are marked: each block sits between `<!-- Name: …`
@@ -145,7 +145,7 @@ serves the root or `/docs`, never `/site`. So:
   then Settings › Pages › gh-pages, / (root). Retire sill-site then.
 
 ```
-git clone https://github.com/Saffsanity/sill-site.git ../sill-site     # once
+git clone https://github.com/ABOYrbx/sill-android-site.git ../sill-site     # once
 rsync -a --delete --exclude .git --exclude .github --exclude .nojekyll site/ ../sill-site/   # when the site changes
 git -C ../sill-site add -A && git -C ../sill-site commit -m "Update the site" && git -C ../sill-site push
 ```
@@ -157,12 +157,12 @@ Sponsor button); the two excludes keep `--delete` off them.
       (185.199.108.153, .109, .110, .111), the matching AAAA records (2606:50c0:8000::153 to
       8003::153), and Email Routing forwarding support@ to Noah's mailbox. Since 2026-09-27 the
       records are DNS only (Cloudflare's proxy is off, so the site may serve video, which
-      Cloudflare's free plan forbids), `www` is a CNAME to saffsanity.github.io, and GitHub serves
+      Cloudflare's free plan forbids), `www` is a CNAME to ABOYrbx.github.io, and GitHub serves
       the pages with its own certificate for both names (expiring 2026-12-26; GitHub renews it).
 - [x] Done 2026-09-27: with the proxy off, Cloudflare's SSL/TLS mode, Always Use HTTPS and Email
       Address Obfuscation no longer touch the site (the pages' `<!--email_off-->` comments stay,
-      inert), and the domain is verified for the Saffsanity GitHub account (the TXT record
-      `_github-pages-challenge-Saffsanity`, which stays).
+      inert), and the domain is verified for the ABOYrbx GitHub account (the TXT record
+      `_github-pages-challenge-ABOYrbx`, which stays).
 - [x] Done 2026-09-27: Enforce HTTPS is on in sill-site's Settings › Pages.
 - [ ] In a private window: https://getsill.app/, `/download`, `/privacy` and `/support` all
       load. GitHub Pages serves `privacy.html` at `/privacy`, the form the app and App Store
@@ -277,8 +277,8 @@ Sill for Mac is a cask, `sill`, in Sill's own tap. Homebrew's main repository (h
 comes later, when the cask qualifies (below).
 
 - [x] Done 2026-10-14: the public repository
-      [Saffsanity/homebrew-sill](https://github.com/Saffsanity/homebrew-sill) is the tap
-      `saffsanity/sill`. It holds `Casks/sill.rb` (the release's `Sill.dmg` by its version and
+      [ABOYrbx/homebrew-sill](https://github.com/ABOYrbx/homebrew-sill) is the tap
+      `ABOYrbx/sill`. It holds `Casks/sill.rb` (the release's `Sill.dmg` by its version and
       SHA-256, `depends_on arch: :arm64` and `depends_on macos: :sonoma` as the app's own
       Info.plist and binary say, a livecheck on the latest GitHub release, and a `zap` for
       `~/Library/Logs/Sill` and `~/Library/Preferences/me.saffer.sill.mac.plist`, all Sill leaves
@@ -288,18 +288,18 @@ comes later, when the cask qualifies (below).
       --strict`, which downloads the image and checks its SHA-256, the version against the
       latest release and the minimum macOS against the app. It runs on pull requests and on
       pushes to main.
-- Installing: `brew install --cask saffsanity/sill/sill` taps it and trusts that one cask. Since
+- Installing: `brew install --cask ABOYrbx/sill/sill` taps it and trusts that one cask. Since
       Homebrew 6 a cask from a tap that isn't Homebrew's own loads only once it is trusted: after
-      `brew tap saffsanity/sill` alone, `brew install --cask sill` stops at "Refusing to load cask
-      saffsanity/sill/sill from untrusted tap saffsanity/sill" until `brew trust --cask
-      saffsanity/sill/sill`.
+      `brew tap ABOYrbx/sill` alone, `brew install --cask sill` stops at "Refusing to load cask
+      ABOYrbx/sill/sill from untrusted tap ABOYrbx/sill" until `brew trust --cask
+      ABOYrbx/sill/sill`.
 - On this Mac, never install the cask into /Applications, where Sill.app runs: give `brew install
       --cask` an `--appdir` of a scratch folder (Homebrew remembers it, and `brew uninstall`
       removes the app from there), and never `brew uninstall --zap`, which trashes the running
       Sill's settings and log.
 - [ ] Homebrew's main repository, so that `brew install --cask sill` works with no tap. On
-      2026-10-14 `brew audit --cask --new --online --strict saffsanity/sill/sill` failed one rule
-      alone: "GitHub repository too new (22 days old, 30 days required)". Saffsanity/sill was made
+      2026-10-14 `brew audit --cask --new --online --strict ABOYrbx/sill/sill` failed one rule
+      alone: "GitHub repository too new (22 days old, 30 days required)". ABOYrbx/sill-android was made
       on 2026-09-22, so that passes from 2026-10-22. Two more rules run only in homebrew/cask's
       own checks: the homepage's domain must be 30 days old (getsill.app was registered on
       2026-09-25, so from 2026-10-25), and a pull request from the repository's owner is a
@@ -373,8 +373,8 @@ comes later, when the cask qualifies (below).
       #32's, and v0.3.0 on main's head that day, #20's). `make-app.sh --release` builds only the
       commit carrying it, and `release.sh --publish` refuses to start until origin's tag names that
       commit, then makes the GitHub Release for it. Every Sill.app's update check reads the releases
-      of Saffsanity/sill alone (`UpdatePolicy.feed`) and compares the newest published one's tag
-      (not a draft, not a prerelease) with the version it runs: Saffsanity/sill is public (since
+      of ABOYrbx/sill-android alone (`UpdatePolicy.feed`) and compares the newest published one's tag
+      (not a draft, not a prerelease) with the version it runs: ABOYrbx/sill-android is public (since
       2026-09-26), so within a day of a release there every older Sill.app offers it (Check Now in
       Settings › General asks at once). A private repository's releases answer the check with a 404,
       and then no Sill.app offers anything.
@@ -395,17 +395,17 @@ comes later, when the cask qualifies (below).
       (metadata §8).
 - [ ] Publish: `Scripts/release.sh --publish` (with the same two variables), or a pushed tag with
       the release workflow ("Releasing from GitHub Actions" below), creates the GitHub Release
-      `v<version>` in Saffsanity/sill with the assets `Sill.dmg`, `Sill.dmg.sha256`, `Sill.zip` and
+      `v<version>` in ABOYrbx/sill-android with the assets `Sill.dmg`, `Sill.dmg.sha256`, `Sill.zip` and
       `Sill.zip.sha256`; before it builds, `--publish` checks that origin has the tag and that it
       names HEAD (the workflow's checkout is the commit its run was started for, with every tag,
       and it stops when the tag no longer names it). The site's Download button links
       `releases/latest/download/<name>`, which GitHub redirects to the newest release, so
       download.html is never edited per release (its one exception, the move to Sill.dmg, is done:
       below). Anonymous downloads and the update check need a public repository, which
-      Saffsanity/sill is since 2026-09-26. While it was private,
-      `SILL_RELEASE_REPO=Saffsanity/sill-site` was the way out (with download.html's three GitHub
+      ABOYrbx/sill-android is since 2026-09-26. While it was private,
+      `SILL_RELEASE_REPO=ABOYrbx/sill-android-site` was the way out (with download.html's three GitHub
       links pointed there too); release.sh still warns that no Sill.app offers a release published
-      anywhere but Saffsanity/sill, so leave `SILL_RELEASE_REPO` unset (in `~/.sill-release` and as
+      anywhere but ABOYrbx/sill-android, so leave `SILL_RELEASE_REPO` unset (in `~/.sill-release` and as
       a repository variable). One way or the other for a version: pushing the tag, which a local
       `--publish` needs first, also starts the release workflow. With `SILL_SIGN_IN_CI` set to
       `true` that run publishes the release once Noah approves it (Releasing from GitHub Actions ›
@@ -414,19 +414,19 @@ comes later, when the cask qualifies (below).
       way). Neither the variable nor any secret is set on 2026-09-27, so a pushed tag only verifies.
 - [ ] Release notes: `--publish` gives the release a one-line body (the version, the build and
       both SHA-256). Replace it with the release's notes, keeping that line as their last, with
-      `gh release edit v<version> --repo Saffsanity/sill --notes-file <notes>` (as for v0.3.0 and
+      `gh release edit v<version> --repo ABOYrbx/sill-android --notes-file <notes>` (as for v0.3.0 and
       v0.3.1): what is new, the requirements, which device builds go with it, and how to check the
       download. The update check opens the release's page, so this is what every Sill.app that
       offers the update shows first.
 - [ ] Check what was published, signed out: `gh release view v<version> --json assets` lists the
       four assets; `curl -sSLo` each of Sill.dmg and Sill.zip from
-      `https://github.com/Saffsanity/sill/releases/latest/download/<name>`, `shasum -c` against its
+      `https://github.com/ABOYrbx/sill-android/releases/latest/download/<name>`, `shasum -c` against its
       `.sha256`, `spctl -a -vv -t open --context context:primary-signature` on the image and
       `spctl -a -vv -t exec` on the Sill.app inside each ("Notarized Developer ID"), and the app's
       `CFBundleShortVersionString` and `CFBundleVersion`.
 - [ ] Homebrew: bump the cask once the release is published (its `Sill.dmg` must answer). In the
       tap (part 1 §6), from a Mac that has it tapped and the cask trusted: `brew bump-cask-pr
-      --no-fork --version <version> --sha256 <SHA-256> saffsanity/sill/sill`, the SHA-256 the one in
+      --no-fork --version <version> --sha256 <SHA-256> ABOYrbx/sill/sill`, the SHA-256 the one in
       the release's `Sill.dmg.sha256`, commits `sill <version>` on a branch of the tap, pushes it
       and opens a pull request there; merge it when its `brew test-bot` run is green (it downloads
       the image and checks the SHA-256, and the version against the latest release). By hand it is
@@ -445,7 +445,7 @@ comes later, when the cask qualifies (below).
       `publish_release` (and its `.sha256`), for a release after the page has moved, never while
       download.html still links it.
 - [x] Done 2026-09-26 with v0.3.0 (sill-site e4046a1): the first release, and the site
-      republished right after Saffsanity/sill went public, so the button shows.
+      republished right after ABOYrbx/sill-android went public, so the button shows.
 - [ ] iOS: `Scripts/release-ios.sh --bump --upload` (a new version's first upload without `--bump`:
       the release's pull request sets its version and build number); TestFlight §4 below. With the
       build number already committed in the release's pull request (the first item),
@@ -471,7 +471,7 @@ comes later, when the cask qualifies (below).
       2026-11-02, with its markers' words in and the privacy page dated November 2, 2026);
       words marked for a release not out yet stay out of them (part 1 §3).
 - [ ] `site/contribute.html` with it: refresh its "As of" month, its sponsors (the public ones on
-      github.com/sponsors/Saffsanity as a visitor sees them, by the name shown there; the private
+      github.com/sponsors/ABOYrbx as a visitor sees them, by the name shown there; the private
       ones only as "N more who sponsor privately") and its contributors (merged pull requests by
       others, each with what it brought).
 
@@ -662,7 +662,7 @@ address (the number left out, say) stops it before it builds.
 
 - [ ] App Store Connect links the privacy policy and the support page, and the App Privacy answers
       and the policy must agree. Since the first Mac release (v0.3.0, 2026-09-26),
-      Saffsanity/sill-site holds all of `site/`, download.html included, and is republished with
+      ABOYrbx/sill-android-site holds all of `site/`, download.html included, and is republished with
       part 1 §3's rsync (never with `--exclude download.html` any more, which kept that page at
       "being prepared" until then; still without touching sill-site's own `.nojekyll` and
       `.github`), right after each release whose builds the pages describe (part 2, the last
@@ -874,7 +874,7 @@ What a nightly is:
   nightly was (by hand, 2026-10-29) and as every release is since 0.6.0 (Noah, 2026-11-02: "D1 -
   Universal"; release.yml's publish job sets it too; 0.5.1 and earlier were Apple silicon only); notarized and stapled, checked as Gatekeeper will check it, in a zip and a disk image
   named `Sill-nightly-<yyyymmdd>-<sha7>.dmg` and `.zip`, each with its `.sha256`, on the pre-release
-  [`nightly`](https://github.com/Saffsanity/sill/releases/tag/nightly). One pre-release for all
+  [`nightly`](https://github.com/ABOYrbx/sill-android/releases/tag/nightly). One pre-release for all
   the nights: its tag `nightly` moves to each night's commit, its notes say what a nightly is, list the
   newest files with their SHA-256, give Sill for iPhone and iPad's public beta link (release.sh's
   `nightly_testflight_link`: every night's notes replace the last, so a new link is changed there
@@ -935,7 +935,7 @@ For a nightly tester:
   permissions (granted to the bundle ID and the designated requirement, which names the team) carry
   over too. That is why a nightly refuses to build without the profile.
 - The update check never offers a nightly: it reads only
-  `https://api.github.com/repos/Saffsanity/sill/releases/latest`, which never lists a pre-release
+  `https://api.github.com/repos/ABOYrbx/sill-android/releases/latest`, which never lists a pre-release
   (`UpdatePolicy.feed`), refuses an answer that says `prerelease` anyway (`UpdatePolicy.release`), and
   "nightly" is no version. A nightly Sill.app says main's version with its build number (0.5.5 until 2026-10-31, 0.6.0 until App Review approved 0.6.0, 0.6.1 since), so the update check offered it the 0.6.0 release once that was published, like everyone else's, and the nightlies after the release, saying 0.6.1, are offered the 0.6.1 release in turn.
 - Going back: on the Mac, quit Sill, download the release from https://getsill.app/download and
@@ -1055,8 +1055,8 @@ above.
   name.
 - Until 2026-09-26 the repository was private, and GitHub serves a private repository's release
   files only to people signed in with access to it, so everyone else got a 404 even once v0.3.0
-  existed. Saffsanity/sill is public now (the decision at launch: the history stays as it is), so
-  the link works; the alternative, publishing in the public Saffsanity/sill-site with
+  existed. ABOYrbx/sill-android is public now (the decision at launch: the history stays as it is), so
+  the link works; the alternative, publishing in the public ABOYrbx/sill-android-site with
   `SILL_RELEASE_REPO` and `SILL_RELEASE_TOKEN`, was not needed.
 
 ### What a tag does
@@ -1123,7 +1123,7 @@ runs by hand from any ref with that ref's own scripts, so anyone who could push 
 a copy of a script with the Developer ID key or the Admin App Store Connect key on disk (the
 security scan of 2026-10-18, findings 5 and 6). An environment's secrets reach only the jobs that
 name it, from the refs it allows. Environments with rules need a public repository on GitHub Free,
-which Saffsanity/sill is since 2026-09-26.
+which ABOYrbx/sill-android is since 2026-09-26.
 
 - `release`: release.yml's publish job. Only a tag `v*` may use it, and Noah is its required
   reviewer: a release waits for his click (What a tag does, above). Six secrets: the five
@@ -1148,20 +1148,20 @@ step 4), in this order:
 1. The two environments, with their rules, then a look at them. With `gh` (written from GitHub's
    REST reference, "Create or update an environment" and "Create a deployment branch policy", on
    2026-10-29; not run here, as no repository was at hand to try them on), from the repository's
-   folder; 19507835 is Saffsanity's user ID (`gh api users/Saffsanity --jq .id`), and
+   folder; 19507835 is ABOYrbx's user ID (`gh api users/ABOYrbx --jq .id`), and
    `prevent_self_review` stays false because Noah is the one who pushes the tag and the one who
    approves:
 
    ```
-   gh api -X PUT repos/Saffsanity/sill/environments/release --input - <<'EOF'
+   gh api -X PUT repos/ABOYrbx/sill-android/environments/release --input - <<'EOF'
    {"prevent_self_review": false, "reviewers": [{"type": "User", "id": 19507835}],
     "deployment_branch_policy": {"protected_branches": false, "custom_branch_policies": true}}
    EOF
-   gh api -X POST repos/Saffsanity/sill/environments/release/deployment-branch-policies -f name='v*' -f type=tag
-   gh api -X PUT repos/Saffsanity/sill/environments/nightly --input - <<'EOF'
+   gh api -X POST repos/ABOYrbx/sill-android/environments/release/deployment-branch-policies -f name='v*' -f type=tag
+   gh api -X PUT repos/ABOYrbx/sill-android/environments/nightly --input - <<'EOF'
    {"deployment_branch_policy": {"protected_branches": false, "custom_branch_policies": true}}
    EOF
-   gh api -X POST repos/Saffsanity/sill/environments/nightly/deployment-branch-policies -f name=main -f type=branch
+   gh api -X POST repos/ABOYrbx/sill-android/environments/nightly/deployment-branch-policies -f name=main -f type=branch
    ```
 
    Or by hand: Settings › Environments › New environment `release`, Required reviewers: Noah,
@@ -1170,12 +1170,12 @@ step 4), in this order:
    `main`. Either way, look:
 
    ```
-   gh api repos/Saffsanity/sill/environments --jq '.environments[] | {name, reviewers: [.protection_rules[] | select(.type == "required_reviewers") | .reviewers[].reviewer.login], refs: .deployment_branch_policy}'
-   gh api repos/Saffsanity/sill/environments/release/deployment-branch-policies --jq '.branch_policies[] | "\(.type) \(.name)"'
-   gh api repos/Saffsanity/sill/environments/nightly/deployment-branch-policies --jq '.branch_policies[] | "\(.type) \(.name)"'
+   gh api repos/ABOYrbx/sill-android/environments --jq '.environments[] | {name, reviewers: [.protection_rules[] | select(.type == "required_reviewers") | .reviewers[].reviewer.login], refs: .deployment_branch_policy}'
+   gh api repos/ABOYrbx/sill-android/environments/release/deployment-branch-policies --jq '.branch_policies[] | "\(.type) \(.name)"'
+   gh api repos/ABOYrbx/sill-android/environments/nightly/deployment-branch-policies --jq '.branch_policies[] | "\(.type) \(.name)"'
    ```
 
-   `release` with the reviewer `Saffsanity`, `nightly` with none, both with
+   `release` with the reviewer `ABOYrbx`, `nightly` with none, both with
    `"custom_branch_policies": true`; then `tag v*` alone, and `branch main` alone. A `refs` of `null`
    lets any branch or tag in: fix that before going on.
    A POST answered 404 found its environment without `custom_branch_policies` (the PUT before it
@@ -1245,7 +1245,7 @@ administrator can still bypass an environment's rules (GitHub's default), which 
 | `SILL_NOTARY_ISSUER_ID` | secret of `release` and `nightly` | The Issuer ID shown above the keys in App Store Connect. |
 | `SILL_NOTARY_KEY_P8` | secret of `release` and `nightly` | The key file `AuthKey_<Key ID>.p8`, in base64. |
 | `SILL_PROVISION_PROFILE` | secret of `release` and `nightly` | The Developer ID provisioning profile (part 1 §5), in base64: the release and the nightlies embed it. |
-| `SILL_RELEASE_REPO` | variable, optional | `owner/name` of another repository to publish in, such as `Saffsanity/sill-site`. Default: this one, with the run's own token. |
+| `SILL_RELEASE_REPO` | variable, optional | `owner/name` of another repository to publish in, such as `ABOYrbx/sill-android-site`. Default: this one, with the run's own token. |
 | `SILL_RELEASE_TOKEN` | secret of `release`, optional | Only with `SILL_RELEASE_REPO`: a fine-grained personal access token for that one repository, with Contents read and write. |
 
 The workflow takes only an App Store Connect API key, not the app-specific password that part 1 §2
@@ -1292,9 +1292,9 @@ GitHub's prices on 2026-09-25 ([runner pricing](https://docs.github.com/en/billi
 [Actions billing](https://docs.github.com/en/billing/concepts/product-billing/github-actions),
 [hosted runners](https://docs.github.com/en/actions/reference/runners/github-hosted-runners)):
 
-- A public repository, as Saffsanity/sill is since 2026-09-26: nothing. Standard GitHub-hosted
+- A public repository, as ABOYrbx/sill-android is since 2026-09-26: nothing. Standard GitHub-hosted
   runners, `xcode-27` included, are free and unlimited there.
-- A private repository, as Saffsanity/sill was until then: each run's minutes count against the
+- A private repository, as ABOYrbx/sill-android was until then: each run's minutes count against the
   account's included minutes (2,000 a month on GitHub Free, 3,000 on Pro). Count a macOS minute
   as about ten of them: GitHub's billing pages no longer print the multiplier table they used to
   (macOS 10, Linux 1), but they still speak of minute multipliers, and today's prices keep that

@@ -17,20 +17,20 @@ server in between.
 [Privacy](https://getsill.app/privacy) ·
 [Terms](https://getsill.app/terms)
 
-[![CI](https://github.com/Saffsanity/sill/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Saffsanity/sill/actions/workflows/ci.yml)
+[![CI](https://github.com/ABOYrbx/sill-android/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/ABOYrbx/sill-android/actions/workflows/ci.yml)
 
 [![Download on the App Store](https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83)](https://apps.apple.com/app/id6816359860)
 
 Sill for Mac is a free, notarized download from
 [getsill.app](https://getsill.app/download); with [Homebrew](https://brew.sh),
-`brew install --cask saffsanity/sill/sill` installs the same download from
-Sill's own [tap](https://github.com/Saffsanity/homebrew-sill). Sill for iPhone
+`brew install --cask ABOYrbx/sill/sill` installs the same download from
+Sill's own [tap](https://github.com/ABOYrbx/homebrew-sill). Sill for iPhone
 and iPad is free on the [App Store](https://apps.apple.com/app/id6816359860),
 and you can also build it from source (below).
 
 To try the next version before it ships: Sill for iPhone and iPad has a
 [public beta on TestFlight](https://testflight.apple.com/join/6v7nqyn3), and Sill for Mac
-has [nightly builds](https://github.com/Saffsanity/sill/releases/tag/nightly) on
+has [nightly builds](https://github.com/ABOYrbx/sill-android/releases/tag/nightly) on
 GitHub, notarized like a release but not supported. Your devices stay paired
 (a nightly uses the release's identity), and Sill's update check never offers
 a nightly: the release above is the one to use.
@@ -179,7 +179,7 @@ connections on your local network, over the cable and over Direct Wireless
 Connection are not encrypted, and anything that reaches your Mac there can
 connect without pairing: update it.
 Nightly builds: every night main changes, a notarized Sill for Mac built from it
-goes to the [nightly pre-release](https://github.com/Saffsanity/sill/releases/tag/nightly),
+goes to the [nightly pre-release](https://github.com/ABOYrbx/sill-android/releases/tag/nightly),
 and Sill for iPhone and iPad to TestFlight's testers. A nightly is tested less
 than a release and can break; Sill's update check never offers one, and going back
 from a nightly Sill for Mac to the release keeps its settings and paired devices.
@@ -187,7 +187,7 @@ from a nightly Sill for Mac to the release keeps its settings and paired devices
 ## Tips
 
 Sill is free, with no ads, no tracking and no subscription. If it is useful to
-you, a tip through [GitHub Sponsors](https://github.com/sponsors/Saffsanity)
+you, a tip through [GitHub Sponsors](https://github.com/sponsors/ABOYrbx)
 helps pay for the developer account. A tip unlocks nothing: every feature is
 free. Who sponsors Sill, who has contributed, and how to join
 them: [getsill.app/contribute](https://getsill.app/contribute).

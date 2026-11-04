@@ -6,7 +6,7 @@ body:
     attributes:
       value: >-
         A security problem? Please don't report it here:
-        [SECURITY.md](https://github.com/Saffsanity/sill/security/policy) says how to report it
+        [SECURITY.md](https://github.com/ABOYrbx/sill-android/security/policy) says how to report it
         privately. Setting Sill up? The [support page](https://getsill.app/support) has quick
         fixes for the common problems.
   - type: textarea

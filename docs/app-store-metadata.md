@@ -353,7 +353,7 @@ Your Mac, your network
 Private
 • No account, no ads, no tracking.
 • Sill has no servers and collects no data. The picture and what you type go between your devices and your Mac, and to no one else.
-• Sill is free and open source (Apache 2.0): https://github.com/Saffsanity/sill
+• Sill is free and open source (Apache 2.0): https://github.com/ABOYrbx/sill-android
 
 Good to know
 • Sill shows one window, or the whole desktop, at a time.

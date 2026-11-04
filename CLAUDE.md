@@ -52,7 +52,7 @@ never `--bump`). The steps, the decisions and every text pasted are in sill-hand
   and `MARKETING_VERSION`, the checklist's part 2 first item and Nightlies, metadata's Version row,
   DEVELOPMENT.md's nightly paragraph), merged before the next 09:17 UTC nightly, since the approval
   closes 0.6.0's train (a nightly of a main saying 0.6.0 would then fail its iOS upload); the Homebrew
-  bump (Saffsanity/homebrew-sill's `Casks/sill.rb` to 0.6.0, its dmg SHA-256, `depends_on arch` gone);
+  bump (ABOYrbx/homebrew-sill's `Casks/sill.rb` to 0.6.0, its dmg SHA-256, `depends_on arch` gone);
   #62 told what 0.6.0 is. Docs after the release (this entry, the checklist's part 1 §3, SECURITY.md,
   the metadata's 0.6.0 texts and sizes, the Intel wording) are PR "Docs: the 0.6.0 release".
 - Closed by this release, with their facts in their plans: the version (#269, branch
@@ -4616,7 +4616,7 @@ here; on 2026-09-26 the record was made ("Sill – Mac Streaming", Apple ID
 
 **Before going public (2026-09-26, branch `public-sweep` from main at 150f781,
 with main at a550e27 merged in, PR #24).** Noah's four steps for the first Mac
-release end with making Saffsanity/sill public, which publishes its whole
+release end with making ABOYrbx/sill-android public, which publishes its whole
 history, so a sweep read the tree, every branch's history, the v0.3.0 release
 and the repository's settings first. The branch fixes what the tree can:
 docs/menu-bar-app-plan.md without the Apple Account's address (in the Apple
@@ -4711,7 +4711,7 @@ set the compatibility floor for good (the section before Conventions).
   shows the stream screen for a frame or two first (connected at `.ready`;
   accepted, open question 10).
 - Sill.app: `UpdateChecker` (+ pure `UpdatePolicy`) asks
-  https://api.github.com/repos/Saffsanity/sill/releases/latest 30 s after launch
+  https://api.github.com/repos/ABOYrbx/sill-android/releases/latest 30 s after launch
   when due, then every 24 h plus 0–30 min, an hour after a check with no answer,
   re-armed at wake, and at Check Now: an ephemeral URLSession, `User-Agent:
   Sill/‹version›`, GitHub's Accept and API version, `Accept-Language: en` (it would
@@ -4800,9 +4800,9 @@ set the compatibility floor for good (the section before Conventions).
 - Review fixes after the merge (2026-09-25; the plan's "Review fixes after the
   merge"): `release.sh --publish` refuses, before building, unless origin's tag
   v‹version› names HEAD (gh would make a missing tag from the default branch's
-  tip), passes gh `--verify-tag` in Saffsanity/sill, and warns when
+  tip), passes gh `--verify-tag` in ABOYrbx/sill-android, and warns when
   `SILL_RELEASE_REPO` is elsewhere, since every update check reads only
-  Saffsanity/sill (the checklist's sill-site fallback publishes a download no
+  ABOYrbx/sill-android (the checklist's sill-site fallback publishes a download no
   Sill.app offers); the tag match is `grep -Fx`. A goodbye on a move's
   connection before its window list ends a session whose own connection has
   gone with the Mac's words (a rescue refused by a newer Mac: the notice, no
@@ -4854,13 +4854,13 @@ set the compatibility floor for good (the section before Conventions).
   `--release` refuses an untagged HEAD, `release.sh --dry-run` only warns,
   `--publish` refuses until the tag is pushed), V7
   the privacy policy's Update check section (site/privacy.html) on the
-  published site (Saffsanity/sill-site republished with it on 2026-09-26).
+  published site (ABOYrbx/sill-android-site republished with it on 2026-09-26).
 
 **GitHub Actions (2026-09-25, branch `github-actions` from main at 1f3072a).**
 Noah: the download link still fails; a new release should be checked by
 GitHub, and does that cost money. The link fails twice over: there is no
 release (`release.sh --publish` has never run; `gh release list` is empty), and
-Saffsanity/sill is private, so its release files are a 404 to anyone not signed
+ABOYrbx/sill-android is private, so its release files are a 404 to anyone not signed
 in with access (docs/release-checklist.md, "Releasing from GitHub Actions",
 has both ways out: go public, or publish in sill-site; it went public on
 2026-09-26, and v0.3.0 and v0.3.1 are published there). Added:
@@ -4925,7 +4925,7 @@ has both ways out: go public, or publish in sill-site; it went public on
   release.sh's `--check-tag` on a match, a mismatch, unset, a tag on another
   commit and an annotated tag (a scratch clone), and a dry run with a wrong
   tag stopping before it builds; the Xcode rule on two fake image layouts; `gh
-  api repos/Saffsanity/sill` answers.
+  api repos/ABOYrbx/sill-android` answers.
 - Review fixes (one pass: triggers and permissions, secrets, the Xcode step,
   the cache, injected failures, costs, docs):
   - The Xcode step would have failed every job: the image's `bash` is 3.2 (its
@@ -4992,13 +4992,13 @@ public front page, everything the old README said is in `docs/DEVELOPMENT.md`
 project, plus the two cable sentences main's README gained from
 follow-best-path, PR #12, after this branch began), `LICENSE` is the Apache
 License 2.0 as apache.org publishes it with "Copyright 2026 Noah Saffer" in
-its appendix, and `.github/FUNDING.yml` names GitHub Sponsors (Saffsanity)
+its appendix, and `.github/FUNDING.yml` names GitHub Sponsors (ABOYrbx)
 only, until there is a Ko-fi handle (see Layout for all four). The README
 claims only what the site and this file back: Apple silicon and macOS 14, iOS
 17, no latency figures, and the home connection's lack of encryption said
 plainly.
 - **For Noah:** Sponsorships turned on in the repository's settings (General,
-  Features), or GitHub shows no Sponsor button (github.com/sponsors/Saffsanity
+  Features), or GitHub shows no Sponsor button (github.com/sponsors/ABOYrbx
   is live since 2026-09-25); a Ko-fi handle, if wanted, goes in two places, a
   `ko_fi:` line in FUNDING.yml and a link in the README's Tips; the license
   stays Apache-2.0 (the repository went public with it on 2026-09-26); the App
@@ -7564,14 +7564,14 @@ good.
   the tag only warned about: it sets `SILL_RELEASE_DRY_RUN=1`, with which
   `make-app.sh --release` builds an untagged commit); it refuses a build
   without Assets.car and AppIcon.icns. `--publish` makes the GitHub Release in
-  `SILL_RELEASE_REPO` (default Saffsanity/sill, the only repository the update
+  `SILL_RELEASE_REPO` (default ABOYrbx/sill-android, the only repository the update
   check reads), asks `gh api repos/<repo>` whether it can reach the repository
   (`gh auth status` asks GET /user, which the Actions token can't answer), and
   refuses to start unless origin's tag v‹version› names HEAD (gh would make a
   missing tag from the default branch's tip; not asked in the release
   workflow, whose checkout is the run's own commit with every tag, stopping
   when its tag moved, and keeps no credentials); in
-  Saffsanity/sill it passes gh `--verify-tag`, anywhere else it warns that no
+  ABOYrbx/sill-android it passes gh `--verify-tag`, anywhere else it warns that no
   Sill.app will offer the release. It uploads `Sill.dmg`, `Sill.dmg.sha256`,
   `Sill.zip` and `Sill.zip.sha256` (the zip kept for older links: the download
   page names the image since 0.3.1). Sourced, it only defines its functions.

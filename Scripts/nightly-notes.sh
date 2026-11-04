@@ -62,7 +62,7 @@ markdown_safe() {
 }
 
 main() {
-    local markdown="" whats_new="" repo="${GITHUB_REPOSITORY:-Saffsanity/sill}"
+    local markdown="" whats_new="" repo="${GITHUB_REPOSITORY:-ABOYrbx/sill-android}"
     while [ "$#" -gt 0 ]; do
         case "$1" in
             --markdown) [ "$#" -gt 1 ] || { usage >&2; exit 2; }; markdown="$2"; shift ;;
@@ -133,8 +133,8 @@ main() {
 
     if [ -n "$whats_new" ]; then
         local head_text tail_text body="" line candidate more=0 shown=0 limit=4000
-        local more_line="… and 999 more: https://github.com/Saffsanity/sill/releases/tag/nightly"
-        head_text="Nightly build of main: Sill ${ios_version:-$mac_version} ($build), commit $short, $day. It is not a release and can break. Some changes need Sill for Mac's nightly of the same date: https://github.com/Saffsanity/sill/releases/tag/nightly"
+        local more_line="… and 999 more: https://github.com/ABOYrbx/sill-android/releases/tag/nightly"
+        head_text="Nightly build of main: Sill ${ios_version:-$mac_version} ($build), commit $short, $day. It is not a release and can break. Some changes need Sill for Mac's nightly of the same date: https://github.com/ABOYrbx/sill-android/releases/tag/nightly"
         tail_text="Feedback: take a screenshot while you use Sill, or Send Beta Feedback in TestFlight, or write to support@getsill.app."
         if [ "$count" = 0 ]; then
             body="Nothing merged into main since $since: the same as the last nightly, built again."
@@ -153,7 +153,7 @@ main() {
                 shown=$((shown + 1))
             done <<<"$merged"
             if [ "$more" -gt 0 ]; then
-                body="$body"$'\n'"… and $more more: https://github.com/Saffsanity/sill/releases/tag/nightly"
+                body="$body"$'\n'"… and $more more: https://github.com/ABOYrbx/sill-android/releases/tag/nightly"
             fi
         fi
         printf '%s\n\n%s\n\n%s\n' "$head_text" "$body" "$tail_text" >"$whats_new"

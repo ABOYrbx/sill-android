@@ -512,7 +512,7 @@ it ever does, the settings key and the menu item carry over.
 #### 6.2 The request
 
 ```
-GET https://api.github.com/repos/Saffsanity/sill/releases/latest
+GET https://api.github.com/repos/ABOYrbx/sill-android/releases/latest
 User-Agent: Sill/0.3.0
 Accept: application/vnd.github+json
 X-GitHub-Api-Version: 2022-11-28
@@ -1407,7 +1407,7 @@ stacked on #13; 0–30 minutes of jitter; older development builds loop against 
 - **H8, Sill.app end to end** (on 6390d4f; the bare SillMenuBar as `SillMenuBarUN --synthetic`,
   against `sillfeed.py`): run 1 (`-SillUpdateFeed`, `-SillUpdateVersion 0.3.0`, `-SillUpdateNow 1`): one
   request (`User-Agent 'Sill/0.3.0'`, no Cookie, no If-None-Match), "Update check: Sill 0.4 is
-  available (this is 0.3.0): https://github.com/Saffsanity/sill/releases/tag/v0.4.0", the live menu
+  available (this is 0.3.0): https://github.com/ABOYrbx/sill-android/releases/tag/v0.4.0", the live menu
   (`-SillPrintMenuAfter`) with "Sill 0.4 Is Available…  — You have 0.3; opens its download page"
   right after the card, the pane's line "Sill 0.4 is available.", the four keys in the defaults,
   exit 0; run 2 (no Check Now, 40 s): "Update: Sill 0.4 is available (found by an earlier check).",
@@ -1621,9 +1621,9 @@ privacy sentence the Remote Access cut missed, and docs the merge left stale. Fi
   published a release, and its source archives, of main's tip rather than the notarized commit,
   and pushing the real tag later was refused. `release.sh --publish` now reads origin's tag before
   it builds (`git ls-remote`, an annotated tag's peeled line) and refuses unless it names HEAD; in
-  Saffsanity/sill gh also gets `--verify-tag`, and a failed `gh release create` ends the run with
-  its own error. Every Sill.app reads Saffsanity/sill's releases alone (`UpdatePolicy.feed`), so
-  the checklist's fallback to Saffsanity/sill-site while sill is private publishes a download that
+  ABOYrbx/sill-android gh also gets `--verify-tag`, and a failed `gh release create` ends the run with
+  its own error. Every Sill.app reads ABOYrbx/sill-android's releases alone (`UpdatePolicy.feed`), so
+  the checklist's fallback to ABOYrbx/sill-android-site while sill is private publishes a download that
   no Sill.app offers. The fallback stays (Noah's call); release.sh warns before it builds and as it
   publishes, its last line says to point download.html's links there, and the checklist says what
   to do once sill is public (unset `SILL_RELEASE_REPO`, point the links back, publish the newest

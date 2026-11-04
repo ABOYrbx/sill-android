@@ -3292,7 +3292,7 @@ and each is fixed in a commit of its own theme (4889e62 to 553ad58, and this one
   a `sill-pair/1` connection's.
 - **Stale costs and timings** (553ad58): the checklist priced the mutants at fifteen jobs, two
   hours and $7.50 (32 jobs now; their scripts took 205 minutes here, so about four hours, some
-  2,400 included minutes or $15 on a private repository) and called Saffsanity/sill private (public
+  2,400 included minutes or $15 on a private repository) and called ABOYrbx/sill-android private (public
   since 2026-09-26); run-all.sh's header said two minutes and most of an hour (five, and well over
   an hour).
 - **Nothing for Noah's devices after the third merge** (this commit): CLAUDE.md's untested list
