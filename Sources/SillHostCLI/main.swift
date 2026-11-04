@@ -8,6 +8,17 @@ import SillHostCore
 // buffered off a terminal, which hides the stats line until exit).
 setvbuf(stdout, nil, _IOLBF, 0)
 
+// `SillHost --dump-protocol <dir>`: write golden byte fixtures for every StreamMessage kind, then exit.
+if let dumpIdx = CommandLine.arguments.firstIndex(of: "--dump-protocol") {
+    guard dumpIdx + 1 < CommandLine.arguments.count else {
+        print("--dump-protocol requires a directory argument.")
+        exit(2)
+    }
+    let dumpDir = CommandLine.arguments[dumpIdx + 1]
+    ProtocolDumper.dump(to: dumpDir)
+    exit(0)
+}
+
 // Knobs for the spike: maxFPS, captureScale, bitrate (per 60 fps), prioritizeSpeed. They live in
 // Sources/SillHost/HostConfig.swift now (`HostConfig.standard`); the menu bar app's Settings start from
 // `HostConfig.app`. Change, rebuild, measure.

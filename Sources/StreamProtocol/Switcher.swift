@@ -179,7 +179,9 @@ public struct WindowCommand: Codable {
 /// JSON payloads. Everything here is small and infrequent; frames never go through JSON.
 public enum Wire {
     public static func encode<T: Encodable>(_ value: T) -> Data {
-        (try? JSONEncoder().encode(value)) ?? Data()
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .sortedKeys
+        return (try? encoder.encode(value)) ?? Data()
     }
     public static func decode<T: Decodable>(_ type: T.Type, from data: Data) -> T? {
         try? JSONDecoder().decode(type, from: data)

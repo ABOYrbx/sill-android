@@ -1,0 +1,226 @@
+[
+  {
+    "byteLength" : 25,
+    "filename" : "parameterSets.bin",
+    "kind" : 0,
+    "name" : "parameterSets",
+    "rawValue" : 0
+  },
+  {
+    "byteLength" : 20,
+    "filename" : "frame.bin",
+    "kind" : 1,
+    "name" : "frame",
+    "rawValue" : 1
+  },
+  {
+    "byteLength" : 244,
+    "filename" : "windowList.bin",
+    "kind" : 2,
+    "name" : "windowList",
+    "rawValue" : 2
+  },
+  {
+    "byteLength" : 22,
+    "filename" : "thumbnail.bin",
+    "kind" : 3,
+    "name" : "thumbnail",
+    "rawValue" : 3
+  },
+  {
+    "byteLength" : 35,
+    "filename" : "appIcon.bin",
+    "kind" : 4,
+    "name" : "appIcon",
+    "rawValue" : 4
+  },
+  {
+    "byteLength" : 59,
+    "filename" : "appList.bin",
+    "kind" : 5,
+    "name" : "appList",
+    "rawValue" : 5
+  },
+  {
+    "byteLength" : 34,
+    "filename" : "selectSource.bin",
+    "kind" : 6,
+    "name" : "selectSource",
+    "rawValue" : 6
+  },
+  {
+    "byteLength" : 44,
+    "filename" : "launchApp.bin",
+    "kind" : 7,
+    "name" : "launchApp",
+    "rawValue" : 7
+  },
+  {
+    "byteLength" : 55,
+    "filename" : "input.bin",
+    "kind" : 8,
+    "name" : "input",
+    "rawValue" : 8
+  },
+  {
+    "byteLength" : 79,
+    "filename" : "viewport.bin",
+    "kind" : 9,
+    "name" : "viewport",
+    "rawValue" : 9
+  },
+  {
+    "byteLength" : 22,
+    "filename" : "ping.bin",
+    "kind" : 10,
+    "name" : "ping",
+    "rawValue" : 10
+  },
+  {
+    "byteLength" : 22,
+    "filename" : "pong.bin",
+    "kind" : 11,
+    "name" : "pong",
+    "rawValue" : 11
+  },
+  {
+    "byteLength" : 131,
+    "filename" : "clientStats.bin",
+    "kind" : 12,
+    "name" : "clientStats",
+    "rawValue" : 12
+  },
+  {
+    "byteLength" : 14,
+    "filename" : "tick.bin",
+    "kind" : 13,
+    "name" : "tick",
+    "rawValue" : 13
+  },
+  {
+    "byteLength" : 34,
+    "filename" : "cursorShape.bin",
+    "kind" : 14,
+    "name" : "cursorShape",
+    "rawValue" : 14
+  },
+  {
+    "byteLength" : 39,
+    "filename" : "windowCommand.bin",
+    "kind" : 15,
+    "name" : "windowCommand",
+    "rawValue" : 15
+  },
+  {
+    "byteLength" : 635,
+    "filename" : "hostSettings.bin",
+    "kind" : 16,
+    "name" : "hostSettings",
+    "rawValue" : 16
+  },
+  {
+    "byteLength" : 38,
+    "filename" : "changeSettings.bin",
+    "kind" : 17,
+    "name" : "changeSettings",
+    "rawValue" : 17
+  },
+  {
+    "byteLength" : 479,
+    "filename" : "macInfo.bin",
+    "kind" : 18,
+    "name" : "macInfo",
+    "rawValue" : 18
+  },
+  {
+    "byteLength" : 97,
+    "filename" : "pairRequest.bin",
+    "kind" : 19,
+    "name" : "pairRequest",
+    "rawValue" : 19
+  },
+  {
+    "byteLength" : 93,
+    "filename" : "pairResult.bin",
+    "kind" : 20,
+    "name" : "pairResult",
+    "rawValue" : 20
+  },
+  {
+    "byteLength" : 14,
+    "filename" : "pairingWanted.bin",
+    "kind" : 21,
+    "name" : "pairingWanted",
+    "rawValue" : 21
+  },
+  {
+    "byteLength" : 31,
+    "filename" : "goodbye.bin",
+    "kind" : 22,
+    "name" : "goodbye",
+    "rawValue" : 22
+  },
+  {
+    "byteLength" : 96,
+    "filename" : "hello.bin",
+    "kind" : 23,
+    "name" : "hello",
+    "rawValue" : 23
+  },
+  {
+    "byteLength" : 123,
+    "filename" : "macMenu.bin",
+    "kind" : 24,
+    "name" : "macMenu",
+    "rawValue" : 24
+  },
+  {
+    "byteLength" : 60,
+    "filename" : "pressMenuItem.bin",
+    "kind" : 25,
+    "name" : "pressMenuItem",
+    "rawValue" : 25
+  },
+  {
+    "byteLength" : 54,
+    "filename" : "macPointer.bin",
+    "kind" : 26,
+    "name" : "macPointer",
+    "rawValue" : 26
+  },
+  {
+    "byteLength" : 61,
+    "filename" : "fetchMenu.bin",
+    "kind" : 27,
+    "name" : "fetchMenu",
+    "rawValue" : 27
+  },
+  {
+    "byteLength" : 47,
+    "filename" : "gesture.bin",
+    "kind" : 28,
+    "name" : "gesture",
+    "rawValue" : 28
+  },
+  {
+    "byteLength" : 30,
+    "filename" : "clipboard.bin",
+    "kind" : 32,
+    "name" : "clipboard",
+    "rawValue" : 32
+  },
+  {
+    "byteLength" : 181,
+    "filename" : "audio.bin",
+    "kind" : 43,
+    "name" : "audio",
+    "rawValue" : 43
+  },
+  {
+    "byteLength" : 14,
+    "filename" : "keyframeRequest.bin",
+    "kind" : 44,
+    "name" : "keyframeRequest",
+    "rawValue" : 44
+  }
+]
