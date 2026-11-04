@@ -25,8 +25,12 @@ android {
 
 dependencies {
     implementation(project(":protocol"))
+    implementation("androidx.datastore:datastore-preferences:1.2.1")
+    implementation("androidx.security:security-crypto:1.1.0-alpha06")
+    implementation("com.google.crypto.tink:tink-android:1.9.0")
+
     testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.2.1")
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test:runner:1.6.1")
     androidTestImplementation("androidx.test:core:1.6.1")
 }
