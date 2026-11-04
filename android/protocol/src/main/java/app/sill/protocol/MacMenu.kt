@@ -20,17 +20,17 @@ data class MacMenu(
 ) {
     fun toJson(): String {
         val parts = mutableListOf<String>()
-        version?.let { parts.add("\"version\":$it") }
+        answering?.let { parts.add("\"answering\":$it") }
         app?.let { parts.add("\"app\":${jsonString(it)}") }
         bundleID?.let { parts.add("\"bundleID\":${jsonString(it)}") }
-        menus?.let { parts.add("\"menus\":${listToJson(it)}") }
-        answering?.let { parts.add("\"answering\":$it") }
-        menu?.let { parts.add("\"menu\":${jsonString(it)}") }
         items?.let { parts.add("\"items\":${listToJson(it)}") }
+        menu?.let { parts.add("\"menu\":${jsonString(it)}") }
+        menus?.let { parts.add("\"menus\":${listToJson(it)}") }
         more?.let { parts.add("\"more\":$it") }
+        note?.let { parts.add("\"note\":${jsonString(it)}") }
         pressed?.let { parts.add("\"pressed\":$it") }
         stale?.let { parts.add("\"stale\":$it") }
-        note?.let { parts.add("\"note\":${jsonString(it)}") }
+        version?.let { parts.add("\"version\":$it") }
         return "{" + parts.joinToString(",") + "}"
     }
 
@@ -213,13 +213,13 @@ data class MacMenuItem(
 ) {
     fun toJson(): String {
         val parts = mutableListOf<String>()
-        id?.let { parts.add("\"id\":${jsonString(it)}") }
-        title?.let { parts.add("\"title\":${jsonString(it)}") }
-        separator?.let { parts.add("\"separator\":$it") }
         enabled?.let { parts.add("\"enabled\":$it") }
-        mark?.let { parts.add("\"mark\":${jsonString(it)}") }
+        id?.let { parts.add("\"id\":${jsonString(it)}") }
         key?.let { parts.add("\"key\":${jsonString(it)}") }
+        mark?.let { parts.add("\"mark\":${jsonString(it)}") }
+        separator?.let { parts.add("\"separator\":$it") }
         submenu?.let { parts.add("\"submenu\":$it") }
+        title?.let { parts.add("\"title\":${jsonString(it)}") }
         return "{" + parts.joinToString(",") + "}"
     }
 
@@ -304,10 +304,10 @@ data class FetchMenu(
 ) {
     fun toJson(): String {
         val parts = mutableListOf<String>()
-        version?.let { parts.add("\"version\":$it") }
         id?.let { parts.add("\"id\":${jsonString(it)}") }
         title?.let { parts.add("\"title\":${jsonString(it)}") }
         token?.let { parts.add("\"token\":$it") }
+        version?.let { parts.add("\"version\":$it") }
         return "{" + parts.joinToString(",") + "}"
     }
 
@@ -388,10 +388,10 @@ data class PressMenuItem(
 ) {
     fun toJson(): String {
         val parts = mutableListOf<String>()
-        version?.let { parts.add("\"version\":$it") }
         id?.let { parts.add("\"id\":${jsonString(it)}") }
         title?.let { parts.add("\"title\":${jsonString(it)}") }
         token?.let { parts.add("\"token\":$it") }
+        version?.let { parts.add("\"version\":$it") }
         return "{" + parts.joinToString(",") + "}"
     }
 
