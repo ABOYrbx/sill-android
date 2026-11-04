@@ -236,6 +236,12 @@ The iPhone and iPad app:
 flag, the test tools and the simulator harness, permissions and how to reset
 them, Remote Access, troubleshooting and releases.
 
+## Android client
+
+Sill's iPhone and iPad app is being ported to Android. The Mac side and the
+shared wire protocol are unchanged; the port lives under `android/`. Build and
+run instructions are in [android/README.md](android/README.md).
+
 ## Contributing
 
 Issues are welcome: bug reports, questions and ideas. For a pull request, keep
