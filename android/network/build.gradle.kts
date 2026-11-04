@@ -23,6 +23,12 @@ android {
     }
 }
 
+sourceSets {
+    getByName("test") {
+        resources.srcDirs("../../Tests/fixtures/protocol")
+    }
+}
+
 dependencies {
     implementation(project(":protocol"))
     implementation("androidx.datastore:datastore-preferences:1.2.1")
